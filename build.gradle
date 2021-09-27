@@ -12,6 +12,10 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+    enabled = false
+}
+
 ext {
 	set('swaggerVersion', "3.0.0")
 }
