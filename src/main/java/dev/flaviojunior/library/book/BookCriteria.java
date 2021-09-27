@@ -1,12 +1,12 @@
 package dev.flaviojunior.library.book;
 
-import java.io.Serializable;
-import java.util.Objects;
-
 import dev.flaviojunior.common.service.Criteria;
 import dev.flaviojunior.common.service.filter.LocalDateFilter;
 import dev.flaviojunior.common.service.filter.LongFilter;
 import dev.flaviojunior.common.service.filter.StringFilter;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 public class BookCriteria implements Serializable, Criteria {
 

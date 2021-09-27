@@ -1,9 +1,7 @@
 package dev.flaviojunior.library.author;
 
-import java.util.List;
-
-import javax.persistence.criteria.JoinType;
-
+import dev.flaviojunior.common.service.QueryService;
+import dev.flaviojunior.domain.Author;
 import dev.flaviojunior.domain.Author_;
 import dev.flaviojunior.domain.Book_;
 import org.slf4j.Logger;
@@ -14,9 +12,8 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import dev.flaviojunior.common.service.QueryService;
-// for static metamodels
-import dev.flaviojunior.domain.Author;
+import javax.persistence.criteria.JoinType;
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)

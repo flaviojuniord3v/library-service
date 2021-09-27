@@ -1,11 +1,11 @@
 package dev.flaviojunior.library.author;
 
-import java.io.Serializable;
-import java.util.Objects;
-
 import dev.flaviojunior.common.service.Criteria;
 import dev.flaviojunior.common.service.filter.LongFilter;
 import dev.flaviojunior.common.service.filter.StringFilter;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 public class AuthorCriteria implements Serializable, Criteria {
 

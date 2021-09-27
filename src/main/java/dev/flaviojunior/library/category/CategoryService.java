@@ -1,14 +1,13 @@
 package dev.flaviojunior.library.category;
 
-import java.util.List;
-import java.util.Optional;
-
+import dev.flaviojunior.domain.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import dev.flaviojunior.domain.Category;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Service Implementation for managing {@link Category}.
