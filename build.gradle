@@ -13,7 +13,7 @@ repositories {
 }
 
 jar {
-	enabled = false
+    enabled = false
 }
 
 ext {
@@ -36,6 +36,7 @@ dependencies {
 	annotationProcessor('org.hibernate:hibernate-jpamodelgen')
 	implementation "io.springfox:springfox-boot-starter:${swaggerVersion}"
 	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+	implementation "io.springfox:springfox-bean-validators:${swaggerVersion}"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
