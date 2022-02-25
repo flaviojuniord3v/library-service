@@ -1,12 +1,12 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.5'
+	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
 
 group = 'dev.flaviojunior'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
@@ -18,8 +18,8 @@ jar {
 
 ext {
 	set('swaggerVersion', "3.0.0")
-	set('springCloudVersion', "2020.0.4")
-	set('hibernateVersion', "5.4.32.Final")
+	set('springCloudVersion', "2021.0.0")
+	set('hibernateVersion', "5.6.4.Final")
 	set('mapstructVersion', "1.4.2.Final")
 	set('hikariCPVersion', "3.4.5")
 	set('commonsLang3Version', "3.11")
@@ -33,6 +33,7 @@ configurations {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -49,14 +50,20 @@ dependencies {
 	implementation "org.hibernate:hibernate-core"
 	implementation 'org.hibernate:hibernate-jpamodelgen'
 	annotationProcessor('org.hibernate:hibernate-jpamodelgen')
-	implementation "io.springfox:springfox-boot-starter:${swaggerVersion}"
-	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
-	implementation "io.springfox:springfox-bean-validators:${swaggerVersion}"
+//	implementation "io.springfox:springfox-boot-starter:${swaggerVersion}"
+//	implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+//	implementation "io.springfox:springfox-bean-validators:${swaggerVersion}"
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+//	implementation "org.springframework.boot:spring-boot-starter-security"
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation "org.springframework.boot:spring-boot-starter-oauth2-client"
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	implementation "org.zalando:problem-spring-web:0.27.0"
 	testImplementation "com.h2database:h2:${h2Version}"
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+	testImplementation "org.springframework.security:spring-security-test"
+	testImplementation "org.springframework.boot:spring-boot-test"
 }
 
 dependencyManagement {
@@ -71,5 +78,5 @@ test {
 
 bootBuildImage {
 	imageName "${project.name}:${project.version}"
-	environment(['BP_JVM_VERSION': '11.*'])
+	environment(['BP_JVM_VERSION': '17.*'])
 }

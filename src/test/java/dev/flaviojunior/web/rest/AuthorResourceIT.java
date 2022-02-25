@@ -20,12 +20,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.springframework.security.test.context.support.WithMockUser;
 
 /**
  * Integration tests for the {@link AuthorResource} REST controller.
  */
 @IntegrationTest
 @AutoConfigureMockMvc
+@WithMockUser
 class AuthorResourceIT {
 
     private static final String DEFAULT_FIRST_NAME = "AAAAAAAAAA";

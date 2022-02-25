@@ -1,5 +1,6 @@
 package dev.flaviojunior;
 
+import dev.flaviojunior.config.TestSecurityConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.lang.annotation.ElementType;
@@ -12,6 +13,6 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = LibraryServiceApplication.class)
+@SpringBootTest(classes = { LibraryServiceApplication.class, TestSecurityConfiguration.class })
 public @interface IntegrationTest {
 }
